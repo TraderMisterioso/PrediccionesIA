@@ -1,0 +1,11 @@
+import json
+from datetime import datetime, timedelta
+
+prediccion = 2.45  # Puedes cambiar el número si quieres
+mañana = (datetime.now() + timedelta(days=1)).strftime('%Y-%m-%d')
+resultado = {mañana: prediccion}
+
+with open("prediccion_ia.json", "w") as archivo:
+    json.dump(resultado, archivo)
+
+print("✅ Archivo creado con datos.")
